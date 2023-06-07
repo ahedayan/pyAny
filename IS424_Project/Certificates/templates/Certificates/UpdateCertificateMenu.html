@@ -1,0 +1,50 @@
+{% extends 'Certificates/Layout.html' %}
+
+{% block title %}
+Update
+{% endblock %}
+
+{% block body %}
+
+<div class = "col-6 Update_Select_Form">
+
+
+                    <form action = {% url 'Certificates:updateMenuCertificate' %} method = "post">
+
+                                    {% csrf_token %}
+                                <h1 class="h1_Underline"> Update Certificates from menu </h1>
+                                <p class="Paragraph">Please choose a certificate to Update</p>
+
+                                <select Name = "certificate" id = "" class = "Drop_Down_List" required>
+
+                                        <option value = "" hidden></option>
+                                        {% for cert in certi%}
+                                        <option value = "{{ cert.courseid }}">{{ cert.cname}}, {{ cert.ccompany }}</option>
+                                        {% endfor %}
+
+                                </select>
+
+
+
+                                <div>
+
+                                        <button type = "submit" class = "Update_Button">Select</button>
+                                </div>
+                                
+
+                    </form> 
+
+
+
+                    <a href = "{% url 'Certificates:menu' %}">
+
+                            <button class = "Update_Form_Back_Button">
+                                Back
+                            </button>
+                    </a> 
+
+                    
+</div>
+
+
+{% endblock %}

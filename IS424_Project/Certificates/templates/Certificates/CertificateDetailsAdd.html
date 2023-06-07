@@ -1,0 +1,73 @@
+{% extends 'Certificates/Layout.html' %}
+
+{% block title %}
+Details
+{% endblock %}
+
+{% block body %}
+
+
+
+  <div class = "col-6 new_Details_Form">
+    
+    
+
+    <div class = "col-12">
+    
+      {% for message in messages %}
+
+      <div class="alert-reversed alert-info-reversed">
+      
+            <h2> <img src="https://i.ibb.co/gj1SmrQ/x-transparent-free-png.webp" alt="CorrectLogo" width = "45px"> {{message}} </h2>
+      
+      </div>
+      
+      {% endfor %}
+      
+      <h1 class= "h1_Underline">Adding <strong>{{certi.ccompany}}'s {{certi.cname}}</strong> certificate</h1>
+
+    </div>
+
+
+    <form action = "{% url 'Certificates:detailsadd' certi.courseid %}" method = "post">
+
+      {% csrf_token %} 
+      <div class = "details_Label_Date_Div">
+
+        <label for ="" class = "innerLabelMaroonForm">Granted Date</label>
+        {{ dateform.cdate }} 
+
+        <label for ="" class = "innerLabelMaroonForm">End Date (Optional)</label>
+        {{ dateform.cEndDate }} 
+      </div>
+
+
+      <div class = " details_Add_Button_Div">
+                            
+        <a href = "{% url 'Certificates:detailsadd' certi.courseid %}">
+          <button> add </button>
+        </a>
+      </div>
+
+
+                    
+                  
+    </form>
+
+
+    <div class = " details_Back_Button_Div">
+                              
+      <a href = "{% url 'Certificates:details' certi.courseid %}">
+                            
+        <button> Back </button>
+      </a>
+    </div>
+
+
+  </div>
+
+    
+
+        
+
+{% endblock %}

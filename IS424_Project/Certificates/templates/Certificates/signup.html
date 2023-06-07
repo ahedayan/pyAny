@@ -1,0 +1,72 @@
+{% extends 'Certificates/Regestration.html' %}
+
+{% block title %}
+SignUp
+{% endblock %}
+
+{% block body %}
+
+
+
+<a id="logoId"><img src="https://i.ibb.co/M2Nrtxt/C0-EE5209-8-DE8-49-D2-8-C80-90-EDD456-AF9-B.png" alt="SHAHADTY's Logo" width = "180px"></a>   
+
+
+<div class = "form-box">
+        <div class = "row">
+                <div class = "col-6 Signup_Form">
+
+                        {% for message in messages %}
+
+                                <div class="alert alert-info">
+      
+                                        <h2> <img src="https://i.ibb.co/gj1SmrQ/x-transparent-free-png.webp" alt="CorrectLogo" width = "45px"> {{message}} </h2>
+      
+                                </div>
+      
+                        {% endfor %}
+
+
+                        <form action = {% url 'Certificates:signup' %} method = "post">
+                                {% csrf_token %}
+                                <h1 class = "h1_Underline"> SignUp </h1>
+
+                                <div>
+                                        <label for ="" class = "Inner_Label_Maroon_Form">First Name:</label>
+                                        {{ form.fname }}
+
+                                                                
+                                        <label for ="" class = "Inner_Label_Maroon_Form">Last Name:</label>
+                                        {{ form.lname }}
+                                </div>
+
+
+                                <div>
+
+                                        <label for ="" class = "Inner_Label_Maroon_Form" >Username:</label>
+                                        {{ form.username }}
+                                </div>
+                                                            
+
+                                <div>
+                                        <label for ="" class = "Inner_Label_Maroon_Form">Email:</label>
+                                        {{ form.email }}
+                                </div>
+                                
+                                                                
+                                <div>
+                                        <label for ="" class = "Inner_Label_Maroon_Form" >Password:</label>
+                                        {{ form.password }}
+
+                                </div>
+
+                                <button type = "submit" class = "Create_Account_Button">Create Account</button>
+                        </form>
+
+
+                        <p class = "Paragraph_Login_Signup">Are you a member? <a href = "{% url "Certificates:login" %}" class = "Anchor_Link">Login</a></p>
+
+                </div>
+        </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'Certificates/Layout.html' %}
+
+{% block title %}
+Delete My Certificates
+{% endblock %}
+
+{% block body %}
+
+<div class = "col-6 my_Delete_Form">
+
+    <form action = {% url 'Certificates:deleteMyCertificate' %} method = "post">
+                    
+        {% csrf_token %}
+        <h1 class = "h1_Underline"> Delete from my certificates </h1>
+        <p class = "Paragraph">Please choose a certificate to delete</p>
+
+
+        <select Name = "certificate" id = "" class = "Drop_Down_List" required>
+
+            <option value = "" hidden></option>
+            {% for cert in certi%}
+            <option value = "{{ cert.course.courseid }}">{{ cert.course.cname}}, {{ cert.course.ccompany }}</option>
+            {% endfor %}
+
+        </select>
+
+
+        <div>
+
+            <button type = "submit" class = "Delete_Button">Delete</button>
+        </div>
+
+
+    </form> 
+
+
+    <a href = "{% url 'Certificates:view' %}">
+
+        <button class = "Delete_Form_Back_Button"> Back </button>
+        
+    </a> 
+                
+</div>
+
+
+{% endblock %}

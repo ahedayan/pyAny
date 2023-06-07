@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>
+        {% block title %}
+        {% endblock %}    
+    </title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Pangolin' rel='stylesheet'>
+
+<link rel="stylesheet" href="{% static 'Certificates/mainStyleChanged.css' %}"> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src ="{% static 'Certificates/mainJS.js' %}"> </script>
+
+
+</head>
+
+
+<body>
+    
+
+    <div class = "form-box">
+
+        <div class = "row">
+
+            <div class = "col-12">
+
+                <nav>
+                
+                    <div class = "navbar"> 
+
+                        <div>
+                            <a id="logoId" href="{% url 'Certificates:menu' %}">
+                                <img src="https://i.ibb.co/M2Nrtxt/C0-EE5209-8-DE8-49-D2-8-C80-90-EDD456-AF9-B.png" alt="SHAHADTY's Logo" width = "115px">
+                            </a>
+                        </div>                
+                                        
+
+                        <ul>
+                            <li> <a id = "homeselect"   class = "active1" href="{% url 'Certificates:menu' %}"> Home </a> </li>  
+                            <li> <a id = "viewselect"   class = "active1" href="{% url 'Certificates:view' %}"> View </a> </li>
+                            <li> <a id = "addselect"    class = "active1" href="{% url 'Certificates:add' %}"> Add </a> </li>
+                            <li> <a id = "updateselect" class = "active1" href="{% url 'Certificates:updateMenuCertificate' %}"> Update </a> </li>
+                            <li> <a id = "deleteselect" class = "active1" href="{% url 'Certificates:deleteMenuCertificate' %}"> Delete </a> </li>
+
+                            <a href = "{% url 'Certificates:logout' %}"><button>Logout</button></a>
+                        </ul>
+                </nav>
+
+            </div>
+
+    {% block body %}
+    {% endblock %}
+
+        </div>
+                                    
+    </div>
+
+</body>
+</html>

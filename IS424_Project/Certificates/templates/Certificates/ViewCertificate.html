@@ -1,0 +1,114 @@
+{% extends 'Certificates/Layout.html' %}
+
+
+{% block title %}
+View
+{% endblock %}
+
+
+
+{% block body %}
+
+
+
+<div class = "Update_My_Alert">
+{% for message in messages %}
+
+<div class="alert alert-info">
+
+      <h2> <img src="https://i.ibb.co/NrbpQnp/404-tick.png" alt="CorrectLogo" width = "35px"> {{message}} </h2>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+
+  
+<div class = "col-12 View_Header">
+  
+
+      <h1>My Certificates :)</h1>
+      
+
+
+      {% if noCertificates %}
+
+      <div class = "col-12 No_Certificates_Header">
+
+            <h1> You don't have any Certificates :)</h1>
+
+      </div>
+
+            {% else %}
+            <table class = "Certificate_Table">
+
+                  <thead>
+                        <th>Certificate Name</th>
+                        <th>Certificate Date</th>
+                        <th>Company</th>
+                        <th>Hours</th>
+                        <th>Field</th>
+                        <th>Accredited</th>
+                        <th>End Date</th>
+                  </thead>
+
+
+                  <tbody>
+                        {% for cert in certi %}
+                        <tr>
+                              <td>{{ cert.course.cname }}</td> <!-- New Added , cert is object from granted table -->
+                              <td>{{ cert.grantedDate }}</td>  <!-- New Added , cert is object from granted table -->
+                              <td>{{ cert.course.ccompany }}</td> <!-- New Added , cert is object from granted table -->
+                              <td>{{ cert.course.chours }}</td> <!-- New Added , cert is object from granted table -->
+                              <td>{{ cert.course.cfield }}</td>  <!-- New Added , cert is object from granted table -->
+                              <td>{{ cert.course.accredited }}</td> <!-- New Added , cert is object from granted table -->
+                              <td>{{ cert.cEndDate }}</td> <!-- New Added , cert is object from granted table -->
+                        </tr>
+                              
+                        {% endfor %}
+                              
+                  </tbody>
+
+
+            </table>
+
+                        
+                        
+</div>
+
+
+<div class = "col-12 View_Buttons">
+
+      <a href = "{% url 'Certificates:deleteMyCertificate' %}"> 
+
+            <button> Delete </button>
+
+      </a>
+
+
+      <a href = "{% url 'Certificates:updateMyCertificate' %}">
+
+            <button> Update </button>
+
+      </a>
+
+</div>
+
+                  
+            
+<div class = "col-8">
+
+      <a href = "{% url 'Certificates:menu' %}" class = "No_Decoration">
+                                          
+            <button class = "View_Back_Button"> Back </button>
+
+      </a>
+                        
+</div>
+
+{% endif %}
+                  
+
+{% endblock %}

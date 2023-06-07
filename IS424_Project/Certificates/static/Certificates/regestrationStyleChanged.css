@@ -1,0 +1,148 @@
+body{
+    background-color: #502029;
+    font-family: 'Pangolin';
+}
+
+
+.row > .Signup_Form {
+    text-align: center;
+    margin: 140px auto;
+    background: #FEECBB;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    height:650px;
+    padding: 30px;
+}
+
+.row > .Login_Form {
+    text-align: center;
+    margin: 140px auto;
+    background: #FEECBB;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    height:500px;
+    padding: 30px;
+}
+
+.Inner_Label_Maroon_Form{
+    padding:10px; 
+    color:#502029; 
+    font-weight: bold;
+}
+
+
+.Inner_Label_Form{
+    padding:10px; 
+    color:#FEECBB; 
+    font-weight: bold;
+}
+
+
+.Create_Account_Button {
+    background: #502029;
+    color: #FEECBB;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 50px;
+    width:40%;
+}
+
+.Paragraph_Login_Signup{
+    color:silver;
+    margin-top: 20px;
+    font-size:20px
+}
+
+.Anchor_Link{
+    color:#502029; 
+    text-decoration: none; 
+    font-weight: bold;
+}
+
+.Login_Button {
+    background: #502029;
+    color: #FEECBB;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 50px;
+    width:40%;
+}
+
+.row > div  .h1_Underline {
+    color: #502029;
+    padding: 0 0 20px 0;
+    border-bottom: 3px solid #502029;
+}
+
+.usernamefield{
+    width: 80%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.passwordfield {
+    width: 80%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.fname,.lname{
+    width: 33.28%;
+    padding: 10px;
+    margin-right:3px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.emailfield{
+    width: 80%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left:32px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+a[id="logoId"]{
+    position:absolute; 
+    top:0; 
+    left:0
+}
+
+
+.alert-info{
+    text-align:center;
+    height:60px;
+    background-color:#502029;
+    border-color:#502029;
+    border-radius: 25px;
+} 
+
+.alert{
+    color:#FEECBB;
+}
+
+.alert h2 img[src = "https://i.ibb.co/NrbpQnp/404-tick.png"] {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.alert h2 img[src = "https://i.ibb.co/gj1SmrQ/x-transparent-free-png.webp"] {
+    margin-bottom: 5px;
+}

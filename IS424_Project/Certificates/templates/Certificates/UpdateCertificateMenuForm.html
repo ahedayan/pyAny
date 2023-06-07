@@ -1,0 +1,86 @@
+{% extends 'Certificates/Layout.html' %}
+
+{% block title %}
+Update
+{% endblock %}
+
+
+
+
+{% block body %}
+
+
+<script>
+
+        document.addEventListener('DOMContentLoaded' , () =>{
+        
+                document.getElementById("cname").value = "{{ certi.cname }}";
+                document.getElementById("ccompany").value = "{{ certi.ccompany }}";
+                document.getElementById("chours").value = "{{ certi.chours }}";
+                document.getElementById("cfield").value = "{{ certi.cfield }}";
+                document.getElementById("accredited").value = "{{ certi.accredited }}";
+            
+            });
+</script>
+
+
+
+<div class = "col-6 Update_Form">
+
+                
+
+
+                         <form action = "{% url 'Certificates:updateMenuCertificateForm' certi.courseid %}" method = "post">
+                                {% csrf_token %}
+
+                                <h1 class="h1_Underline"> Update Certificates from menu </h1>
+
+
+                                <div>
+                                        <label for ="" class = "Inner_Label_Form Name_Add_Label">Name</label>
+                                        {{ form.cname }}
+                                </div>
+    
+    
+                                <div>
+    
+                                        <label for ="" class = "Inner_Label_Form">Company</label>
+                                        {{ form.ccompany }}
+    
+                                        <label for ="" class = "Inner_Label_Form Hours_Add_Label">Hours</label>
+                                        {{ form.chours }}
+                                </div>
+                                    
+    
+                                    <div>
+    
+                                            <label for ="" class = "Inner_Label_Form Field_Add_Label">Field</label>
+                                            {{ form.cfield }}
+                                        
+                                            <label for ="" class = "Inner_Label_Form Accredited_Add_Label">Accredited</label>
+                                            {{ form.accredited }}
+                                    </div> 
+
+
+
+                                <div>
+
+                                        <button type = "submit" class = "Update_Button">Update</button>
+                                </div>
+
+
+                        </form>
+
+
+                    <a href = "{% url 'Certificates:updateMenuCertificate' %}">
+
+                            <button class = "Update_Form_Back_Button">
+                                Back
+                            </button>
+                    </a> 
+
+                    
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'Certificates/Layout.html' %}
+
+{% block title %}
+Details
+{% endblock %}
+
+{% block body %}
+
+
+
+
+<div class = "col-12 Details_Header">
+      
+      <h1>Details of <strong>{{certi.ccompany}}'s {{certi.cname}}</strong> certificate</h1>
+
+      <table class = "Certificate_Table">
+            <thead>
+                  <th>Certificate Name</th>
+                  <th>Company</th>
+                  <th>Hours</th>
+                  <th>Field</th> 
+                  <th>Accredited</th> 
+            </thead>
+
+            <tbody>
+                  <tr>
+                        <td>{{ certi.cname }}</td>
+                        <td>{{ certi.ccompany }}</td>
+                        <td> {{ certi.chours }}</td> 
+                        <td> {{ certi.cfield }} </td> 
+                        <td> {{ certi.accredited }} </td> 
+                  </tr>
+
+                                    
+
+            </tbody>
+      </table>
+          
+
+</div>
+
+
+<div class = "col-12 Details_Add_Div">
+
+      <a href = "{% url 'Certificates:detailsadd' certi.courseid %}">
+
+            <button type = "submit" class = "Details_Add_Button">Add</button>
+
+      </a>
+
+</div>
+    
+
+
+<div class = "col-4 Details_Back_Button">
+
+      <a href = "{% url 'Certificates:menu' %}">
+
+      <button>Back</button>
+
+      </a>
+
+</div>
+
+{% endblock %}

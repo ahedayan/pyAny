@@ -1,0 +1,75 @@
+{% extends 'Certificates/Regestration.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block body %}
+
+<a id="logoId">
+
+        <img src="https://i.ibb.co/M2Nrtxt/C0-EE5209-8-DE8-49-D2-8-C80-90-EDD456-AF9-B.png" alt="SHAHADTY's Logo" width = "180px">
+</a>
+
+
+<div class = "form-box">
+
+        <div class = "row">
+
+                <div class = "col-lg-6 Login_Form">
+                                    
+                        {% for message in messages %}
+
+                        {% if message.tags == 'error' %}
+
+                        <div class="alert alert-info">
+      
+                                <h2> <img src="https://i.ibb.co/gj1SmrQ/x-transparent-free-png.webp" alt="UncorrectLogo" width = "45px"> {{message}} </h2>
+
+                        </div>
+                        
+                        {% else %}
+
+                        <div class="alert alert-info">
+
+                                <h2> <img src="https://i.ibb.co/NrbpQnp/404-tick.png" alt="CorrectLogo" width = "35px"> {{message}} </h2>
+                          
+                        </div>
+
+                        
+                        {% endif %}
+
+                         {% endfor %}
+
+
+                        <form action = {% url 'Certificates:login' %} method = "post">
+
+                                {% csrf_token %}
+                                <h1 class = "h1_Underline"> Login </h1>
+
+
+                                <div>
+
+                                        <label for ="" class = "Inner_Label_Maroon_Form">Username:</label>
+                                        {{ form.username }}
+                                </div>
+
+
+                                <div>
+
+                                        <label for ="" class = "Inner_Label_Maroon_Form">Password:</label>
+                                        {{ form.password }}
+                                </div>
+
+
+                                <button type = "submit" class = "Login_Button">Login</button>
+
+                        </form>
+
+                        <p class = "Paragraph_Login_Signup">Not a member? <a href = "{% url "Certificates:signup" %}" class = "Anchor_Link">Signup</a></p>
+
+                </div>
+        </div>
+</div>
+
+{% endblock %}
