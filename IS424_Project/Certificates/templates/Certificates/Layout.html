@@ -11,12 +11,691 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link href='https://fonts.googleapis.com/css?family=Pangolin' rel='stylesheet'>
 
-<link rel="stylesheet" href="{% static 'Certificates/mainStyleChanged.css' %}"> 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src ="{% static 'Certificates/mainJS.js' %}"> </script>
+<script> 
+    document.addEventListener("DOMContentLoaded",()=>{
 
+        if(document.title == "Menu"){
+           const ew = document.querySelector("#homeselect");
+       
+           
+            ew.style.color = "white";
+            ew.style.fontWeight = "bold";
+            
+        }
+        else if(document.title == "View"){
+           const ew = document.querySelector("#viewselect");
+       
+            ew.style.color = "white";
+            ew.style.fontWeight = "bold";
+       
+        }
+        else if(document.title == "Add"){
+           const ew = document.querySelector("#addselect");
+       
+            ew.style.color = "white";
+            ew.style.fontWeight = "bold";
+        }
+        else if(document.title == "Update"){
+           const ew = document.querySelector("#updateselect");
+       
+            ew.style.color = "white";
+            ew.style.fontWeight = "bold";
+        }
+        else if(document.title == "Delete"){
+           const ew = document.querySelector("#deleteselect");
+       
+       
+            ew.style.color = "white";
+            ew.style.fontWeight = "bold";
+        }
+       
+       
+       
+       });
+       
+       
+       
+
+</script>
+
+<style>
+
+    body{
+        background-color: #FEECBB;
+        font-family: 'Pangolin';
+    }
+    
+    
+    
+    .row > .viewform {
+        text-align: center;
+        margin: 160px auto;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        height:500px;
+        padding: 30px;
+    }
+    
+    .row > .Add_Form {
+        text-align: center;
+        margin: 60px auto;
+        background: #502029;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        height:530px;
+        padding: 30px;
+    
+    }
+    
+    .row > .Delete_Form {
+        text-align: center;
+        margin: 120px auto;
+        background: #502029;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        height:350px;
+        padding: 30px;
+    }
+    
+    .row > .my_Delete_Form {
+        text-align: center;
+        margin: 120px auto;
+        background: #502029;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        height:350px;
+        padding: 30px;
+    }
+    
+    
+    .row > .Update_Select_Form {
+        text-align: center;
+        margin: 120px auto;
+        background: #502029;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        height:350px;
+        padding: 30px;
+        
+    }
+    
+    .row > .Update_Form {
+        text-align: center;
+        margin: 60px auto;
+        background: #502029;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        height:470px;
+        padding: 30px;
+        
+    }
+    
+    .row > .my_Update_Form {
+        text-align: center;
+        margin: 60px auto;
+        background: #502029;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        height:480px;
+        padding: 30px;
+        
+    }
+    
+    
+    nav{
+        padding-right:15px;
+        padding-left:15px;
+        height:110px;
+        background:#502029;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    }
+    
+    nav .navbar{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        height:100%;
+        width:100%;
+        margin:auto;
+    }
+    
+    nav .navbar > ul{
+        display:flex;
+        list-style-type: none;
+    }
+    
+    nav .navbar ul li {
+        margin: 30px;
+    }
+    
+    nav .navbar ul button {
+        width: 90px;
+        height:34px;
+        margin-top:30px;
+        background: #feecbb;
+        color: #502029;
+        border: none;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    
+    
+    
+    
+    nav .navbar ul li a {
+        color: #FEECBB;
+        font-size: 24px;
+        text-decoration:none;
+    }
+    .active1:hover{
+        border-bottom:2px solid white;
+        transition-delay:0.08s;
+        color: #ffffff;     
+    }
+    
+    
+    .innerLabelMaroonForm{
+        padding:10px; 
+        color:#FEECBB; 
+        font-weight: bold;
+    }
+    
+    
+    .Inner_Label_Form{
+        padding:10px; 
+        color:#FEECBB; 
+        font-weight: bold;
+    }
+    
+    .certificateNameField{
+        width: 80%;
+        padding: 10px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .companyfield {
+        width: 30%;
+        padding: 10px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    
+    .coursefield , .accreditedfield{
+        
+        width: 30%;
+        padding: 10px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    
+    
+    }
+    
+    .Name_Add_Label{
+        padding-right: 25px;
+    }
+    
+    
+    .Hours_Add_Label{
+        padding: 0 10px 0 60px;
+    }
+    
+    .Field_Add_Label{
+        padding-right:40px;
+    }
+    
+    .Accredited_Add_Label{
+        padding: 0 10px 0 30px;
+    }
+    
+    
+    .Add_Button {
+        background: #FEECBB;
+        color: #502029;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 40px;
+        width:20%;
+    }
+    
+    .Add_Form_Back_Button{
+        float: left; 
+        margin-top:40px;
+        background: #FEECBB;
+        color: #502029;
+        border: none;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+        width:10%;
+        padding: 5px;
+    }
+    
+    a[id="logoId"]{
+        position:absolute; 
+        top:0; 
+        left:0
+    }
+    
+    
+    .Certificate_Table { 
+        margin-left: auto;
+        margin-right: auto;
+        min-width:690px;
+        margin-top:70px;
+        border-radius: 5px 5px 0 0;
+        overflow:hidden;
+        box-shadow: 0 0 20px rgba(0,0,0,0.15);
+      }
+    
+    .Certificate_Table thead th {
+        background-color:#502029;
+        color:#FEECBB;
+        text-align:center;
+    }
+    
+    .Certificate_Table td , .Certificate_Table th{
+        padding:12px 15px;
+        font-size:18px;
+        text-align:center;
+    }
+    
+    .Table_Button{
+        background-color:#502029;
+        color:#FEECBB;
+        border: 1px solid black;
+        border-radius: 3px;
+        
+    }
+    
+    
+    .Menu_Header{
+        margin: 20px;
+        color:#502029;
+    }
+    .Menu_Header h1{
+        font-weight:bold;
+    }
+    
+    .No_Certificates_Header{
+        text-align:center;
+        color:#502029;
+        margin-top:40px;
+    }
+    .No_Certificates_Header h1 {
+        font-weight:bold;
+    }
+    
+    .View_Header{
+        text-align:center;
+        color:#502029;
+        margin-top:70px;
+        margin-bottom: 0px;
+    }
+    .View_Header h1 {
+        font-weight:bold;
+        font-size: 50px;
+    }
+    
+    
+    .h1_Underline {
+        color: #FEECBB;
+        padding: 0 0 20px 0;
+        border-bottom: 3px solid #FEECBB;
+    }
+    
+    .Paragraph {
+        font-size: 20px;
+        color: #FEECBB;
+        margin-top:20px;
+    }
+    
+    
+    
+    .Certificate_Table tbody tr{
+        border-bottom: 1px solid #dddddd;
+        background-color: white;
+    }
+    
+    .Certificate_Table tbody tr:nth-of-type(even){
+        background-color:#f3f3f3;
+        font-weight:bold;
+        color:#502029;
+    }
+    
+    .Certificate_Table tbody tr:last-of-type {
+        border-bottom: 2px solid #502029;
+    }
+    
+    
+    .View_Page{
+        margin-top:0px;
+    }
+    
+    
+    
+    .Details_Add_Div{
+        text-align:center;
+    }
+    
+    
+    .Details_Header > div{
+        margin-left: 80px;
+        margin-bottom: 20px;
+    }
+    
+    
+    .Details_Header h1 {
+        margin-top: 70px ;
+        font-weight:bold;
+        color:#502029;
+        font-size: 50px;
+        text-align: center;
+    
+    }
+    
+    
+    
+    .new_Details_Form{
+        text-align: center;
+        margin: 100px auto;
+        background: #502029;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        height:470px;
+        padding: 30px;
+    }
+    
+    
+    
+    .Details_Form{
+        text-align: center;
+        margin: 100px auto;
+        background: #502029;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        height:480px;
+        padding: 30px;
+    }
+    
+    .Details_Add_Button{
+        background: #502029;
+        color: #FEECBB;
+        border: none;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+        width:9%;
+        padding: 5px;
+        margin: 15px;
+    }
+    
+    
+    
+    .detailsDateField{
+        width: 30%;
+        padding: 10px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        margin-right:20px;
+    }
+    
+    
+    .Details_Back_Button button{ 
+        background-color:#502029;
+        color:#FEECBB;
+        border: none;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+        width:20%;
+        margin-top:30px;
+        padding: 5px;
+        margin-left:60px;
+    }
+    
+    
+    .Drop_Down_List{
+        margin-top: 8px;
+        width: 30%;
+        padding: 10px;
+        border: 2px solid #502029;
+        border-radius: 3px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    
+    .Delete_Button{ 
+        background: #FEECBB;
+        color: #502029;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 20px;
+        width:20%;
+    }
+    
+    
+    
+    .View_Buttons{
+        text-align: center;
+    }
+    
+    .View_Buttons a{
+        text-decoration: none;
+    }
+    
+    .View_Buttons button{
+        background: #502029;
+        color: #FEECBB;
+        border: none;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+        width:5%;
+        padding: 5px;
+        margin: 15px;
+    }
+    
+    
+    .No_Decoration{
+        text-decoration:none;
+    }
+    
+    
+    .View_Back_Button{
+        background-color:#502029;
+        color:#FEECBB;
+        border: none;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+        width:10%;
+        margin-top:12px;
+        padding: 5px;
+        margin-left:60px;
+    }
+    
+    
+    .Delete_Form_Back_Button{
+        float: left;
+        background: #FEECBB;
+        color: #502029;
+        border: none;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+        width:10%;
+        padding: 5px;
+    }
+    
+    .Update_Field , .Update_My_Field{
+        margin-top:20px;
+    }
+    
+    .Update_My_Field input{
+        width:15%;
+        border: none;
+        padding:2px;
+        border-radius: 3px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    
+    .Update_Button{ 
+        background: #FEECBB;
+        color: #502029;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 20px;
+        width:20%;
+    }
+    
+    .my_Update_Button{ 
+        background: #FEECBB;
+        color: #502029;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 5px;
+        width:20%;
+    }
+    
+    
+    .Update_Form_Back_Button{
+        float: left;
+        background: #FEECBB;
+        color: #502029;
+        border: none;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+        width:10%;
+        padding: 5px;
+    }
+    
+    
+    .alert-info{
+        text-align:center;
+        height:60px;
+        background-color:#502029;
+        border-color:#502029;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 25px;
+    }
+    
+    
+    
+    .alert{
+        color:#FEECBB;
+    }
+    
+    .alert h2 img {
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    
+    
+    .alert-info-reversed{
+        width: 800px;
+        text-align:center;
+        height:60px;
+        background-color:#FEECBB;
+        border-color:#FEECBB;
+        border-radius: 25px;
+        margin: 5px;
+    }
+    
+    
+    
+    .alert-reversed{
+        color:#502029;
+    }
+    
+    .alert-reversed h2 img {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    
+    
+    
+    .Update_My_Alert{
+        margin-left:auto; 
+        margin-right:auto;
+         margin-top:40px;
+    }
+    
+    
+    .hoursfield{
+        width: 30%;
+        padding: 10px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        
+    }
+    
+    
+    
+    .details_Label_Date_Div{
+        padding-top:30px;
+    }
+    
+    .details_Add_Button_Div button{ 
+        background: #FEECBB;
+        color: #502029;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 25px;
+        width:20%;
+    
+    }
+    
+    
+    .details_Back_Button_Div button{ 
+        float: left; 
+        margin-top:40px;
+        background: #FEECBB;
+        color: #502029;
+        border: none;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+        width:10%;
+        padding: 5px;
+    
+    }
+</style>
 
 </head>
 
